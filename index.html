@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Progress Bar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section>
+        <div class="progress">
+            <div class="bar-holder">
+                <div class="bar prog-1" data-percentage="50%"></div>
+            </div>
+            <div class="bar-holder">
+                <div class="bar prog-2" data-percentage="50%"></div>
+            </div>
+            <div class="bar-holder">
+                <div class="bar prog-3" data-percentage="50%"></div>
+            </div>
+            <div class="bar-holder">
+                <div class="bar prog-4" data-percentage="50%"></div>
+            </div>
+            <div class="bar-holder">
+                <div class="bar prog-5" data-percentage="50%"></div>
+            </div>
+            <button onclick="finishIt()" class="btn-finish">Finish</button>
+        </div>
+    </section>
+
+    <script>
+
+        const finishIt = () => {
+            const progBar = document.querySelectorAll('.progress .bar-holder .bar')
+            progBar.forEach(bar => {
+                bar.style.width = "100%"
+                bar.setAttribute("data-percentage", "100%")
+            })
+        }
+
+    </script>
+</body>
+
+</html>

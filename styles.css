@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+}
+
+section {
+    background-color: #fafafa;
+    height: 100vh;
+}
+
+.progress {
+    height: 100%;
+    display: grid;
+    grid-gap: 20px;
+    align-content: center;
+    justify-items: center;
+}
+
+.bar-holder {
+    background-color: #ebebeb;
+    height: 20px;
+    border-radius: 20px;
+    width: 400px;
+}
+
+.bar {
+    padding: 5px;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: 0 0 3px #3c3c3c;
+    background-image: linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.15) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 8px 8px;
+    transition: width 0.3s ease-in-out;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+
+.bar.prog-1 {
+    background-color: #aadb66;
+}
+
+.bar.prog-2 {
+    background-color: #fe8576;
+}
+
+.bar.prog-3 {
+    background-color: #fefefe;
+}
+.bar.prog-4 {
+    background-color: #7fc2ea;
+}
+.bar.prog-5 {
+    background-color: #fec550;
+}
+
+.bar::after {
+    content: attr(data-percentage);
+    height: 100%;
+    font-weight: bold;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    background-color: #e5e5e5;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 1px rgb(0 0 0 / 40%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    mix-blend-mode: difference;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes progress-bar-stripes {
+    from {
+        background-position: 40px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+.btn-finish {
+    background-color: #404040;
+    color: #bbb;
+    padding: 10px 15px;
+    min-width: 150px;
+    border: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-out;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.btn-finish:focus {
+    outline: none;
+}
+
+.btn-finish:hover {
+    color: #fff;
+}
